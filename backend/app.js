@@ -86,19 +86,23 @@ app.use((req, res, next) => {
 //   credentials: true
 // }));
 
+// app.use(cors({
+//   origin: [
+//     "http://localhost:5173",
+//     "https://video-chatapp-frontend.onrender.com"
+//   ],
+//   credentials: true,
+//   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//   allowedHeaders: ["Content-Type", "Authorization"]
+// }));
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://video-chatapp-frontend.onrender.com"
-  ],
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
+  origin: true,
+  credentials: false
 }));
 
-app.options("*", cors());
+// app.options("*", cors());
 
-app.options("*", cors());
+// app.options("*", cors());
 
 
 app.use(express.json({ limit: "40kb" }));
